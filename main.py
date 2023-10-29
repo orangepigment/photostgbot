@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     start_handler = CommandHandler('start', start)
     photo_handler = MessageHandler(filters.PHOTO & (~filters.COMMAND), photo)
-    unknown_handler = MessageHandler(filters.COMMAND, unknown)
+    unknown_handler = MessageHandler(filters.ALL, unknown)
     application.add_handler(start_handler)
     application.add_handler(photo_handler)
     application.add_handler(unknown_handler)
