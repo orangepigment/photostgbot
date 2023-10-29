@@ -1,7 +1,9 @@
 import logging
 import os
 from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
+from telegram.ext import (
+    ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, Application
+)
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -44,6 +46,10 @@ async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_id=update.effective_chat.id,
         text="Пожалуйста, приложи фото к сообщению)"
     )
+
+
+async def post_init(app: Application) -> None:
+    await app.bot.set_my_commands([('start', 'Описание бота')])
 
 
 if __name__ == '__main__':
