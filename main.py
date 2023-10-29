@@ -1,7 +1,7 @@
 import logging
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,7 +19,8 @@ logging.basicConfig(
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text="Привет! Пришли мне фото, которое ты хочешь увидеть дополненным в канале Слой за слоем."
+        text=
+        "Привет! Пришли мне фото, которое ты хочешь увидеть дополненным в канале Слой за слоем."
     )
 
 
