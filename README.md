@@ -13,3 +13,13 @@ docker run -d --restart=always \
   --log-opt max-file=10 \
   photostgbot:$TAG
 ```
+
+## How to use local pylint pre-commit check (optional)
+### Installation
+```shell
+pre-commit install
+```
+### Manual usage
+```shell
+pre-commit run --all-files
+```
