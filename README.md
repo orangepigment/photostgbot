@@ -5,5 +5,11 @@ A telegram bot for handling only messages with attached photos
 ```shell
 export TAG=<Your image tag>
 docker image build -t photostgbot:$TAG .
-docker run -d --restart=always -e TOKEN=$TOKEN -e SUPPORT_GROUP_ID=$SUPPORT_GROUP_ID photostgbot:$TAG
+docker run -d --restart=always \
+  -e TOKEN=$TOKEN \
+  -e SUPPORT_GROUP_ID=$SUPPORT_GROUP_ID \
+  --log-driver json-file \
+  --log-opt max-size=10m \
+  --log-opt max-file=10 \
+  photostgbot:$TAG
 ```
