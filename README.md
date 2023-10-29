@@ -1,4 +1,6 @@
 # photostgbot
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+
 A telegram bot for handling only messages with attached photos
 
 ## How to run
